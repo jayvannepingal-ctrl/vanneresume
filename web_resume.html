@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jay Vanne C. Pingal — Web Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--bg:#071026;--card:#071428;--accent:#06b6d4;--accent2:#7c3aed;--muted:#9fb0c8;--glass:rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:#e6f3ff;background:linear-gradient(180deg,var(--bg),#051026);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:980px;margin:28px auto;padding:24px}
+    .card{display:grid;grid-template-columns:1fr 340px;gap:20px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:14px;padding:22px;box-shadow:0 10px 40px rgba(2,6,23,0.7);overflow:hidden}
+
+    /* floating animations */
+    @keyframes slowFloat{0%{transform:translateY(0px)}50%{transform:translateY(-8px)}100%{transform:translateY(0px)}}
+    @keyframes driftX{0%{transform:translateX(0)}50%{transform:translateX(6px)}100%{transform:translateX(0)}}
+    .card{animation:slowFloat 10s ease-in-out infinite}
+
+    header.resume-head{display:flex;align-items:center;gap:16px}
+
+    /* FIXED AVATAR (no JV text) */
+    .avatar{
+      width:84px;
+      height:84px;
+      border-radius:14px;
+      background-image:url('1.jpg');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      box-shadow:0 8px 30px rgba(124,58,237,0.12);
+      flex:0 0 84px;
+      overflow:hidden;
+      animation:driftX 8s ease-in-out infinite;
+    }
+
+    .intro{flex:1}
+    .name{font-size:20px;font-weight:800;margin:0}
+    .role{color:var(--muted);margin-top:6px;font-size:13px}
+
+    .contact{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+    .chip{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:10px;font-size:13px;color:var(--muted)}
+
+    .content{padding:6px 2px}
+    h3{margin:18px 0 8px;font-size:15px}
+    p, li{color:#dbeefc;line-height:1.5;margin:0 0 8px}
+    ul{padding-left:18px;margin:0}
+
+    .sidebar{background:linear-gradient(180deg,rgba(255,255,255,0.01),rgba(255,255,255,0.00));padding:16px;border-radius:12px;animation:slowFloat 12s ease-in-out infinite;animation-delay:.3s}
+
+    .skill{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .bar{height:8px;background:rgba(255,255,255,0.04);border-radius:8px;width:100%;margin-left:10px;overflow:hidden}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:8px;transform-origin:left;transition:width .8s cubic-bezier(.2,.9,.3,1)}
+
+    nav{display:flex;gap:8px;flex-wrap:wrap}
+    .nav-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600;cursor:pointer;transition:transform .18s ease,background .18s}
+    .nav-btn:hover{transform:translateY(-6px);background:rgba(255,255,255,0.02)}
+
+    .actions{display:flex;gap:10px;margin-top:12px}
+    .action-btn{padding:10px 12px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+    .primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:white}
+    .outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* responsive */
+    @media(max-width:880px){.card{grid-template-columns:1fr;}.sidebar{order:2}}
+
+    .fade{opacity:0;transform:translateY(10px);animation:reveal .9s ease forwards}
+    .fade.delay1{animation-delay:.08s}
+    .fade.delay2{animation-delay:.16s}
+    .fade.delay3{animation-delay:.24s}
+    @keyframes reveal{to{opacity:1;transform:none}}
+
+    .project{padding:12px;border-radius:10px;background:rgba(255,255,255,0.015);margin-bottom:10px}
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="content">
+
+      <header class="resume-head fade delay1">
+        <div class="avatar"></div>
+
+        <div class="intro">
+          <div class="name">Jay Vanne C. Pingal</div>
+          <div class="role">IT Student • Web Developer • Problem Solver</div>
+          <div class="contact">
+            <div class="chip">Quezon City, Philippines</div>
+            <div class="chip">
+              <a href="mailto:jayvanne.pingal@neu.edu.ph" style="color:inherit;text-decoration:underline">
+                jayvanne.pingal@neu.edu.ph
+              </a>
+            </div>
+            <div class="chip">+63 916 563 0614</div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="fade delay2" style="margin-top:16px">
+        <button class="nav-btn" data-target="#about">About</button>
+        <button class="nav-btn" data-target="#skills">Skills</button>
+        <button class="nav-btn" data-target="#projects">Projects</button>
+        <button class="nav-btn" data-target="#education">Education</button>
+        <button class="nav-btn" data-target="#experience">Experience</button>
+      </nav>
+
+      <main style="margin-top:14px">
+        <section id="about" class="fade delay3">
+          <h3>About Me</h3>
+          <p>I am an Information Technology student at <em>New Era University</em> with hands-on experience in building web applications, managing small databases, and troubleshooting systems.</p>
+        </section>
+
+        <section id="skills" style="margin-top:10px">
+          <h3>Key Skills</h3>
+          <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Node.js / PHP (backend basics)</li>
+            <li>MySQL / PostgreSQL</li>
+            <li>Git, Linux basics, REST APIs</li>
+          </ul>
+        </section>
+
+        <section id="projects" style="margin-top:10px">
+          <h3>Projects</h3>
+          <div class="project">
+            <strong>Smart Attendance Web App</strong>
+            <p style="margin-top:6px">Login system, attendance records, and CSV export. Built with Node.js + SQLite.</p>
+          </div>
+          <div class="project">
+            <strong>Personal Portfolio</strong>
+            <p style="margin-top:6px">A responsive website showcasing projects and skills.</p>
+          </div>
+          <div class="project">
+            <strong>Mini E-commerce Demo</strong>
+            <p style="margin-top:6px">Product listing, cart simulation, checkout flow.</p>
+          </div>
+        </section>
+
+        <section id="education" style="margin-top:10px">
+          <h3>Education</h3>
+          <p><strong>New Era University</strong>  BS Information Technology (2025)</p>
+        </section>
+
+        <section id="experience" style="margin-top:10px">
+          <h3>Experience</h3>
+          <p><strong>Junior Web Developer (Intern)</strong>  Accenture (2025)</p>
+          <p style="margin-top:6px">Handled minor web tasks, debugging, and deployment support.</p>
+        </section>
+      </main>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar fade delay1">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:800">Skills & Levels</div>
+        <div style="font-size:13px;color:var(--muted)">Interactive</div>
+      </div>
+
+      <div style="margin-top:12px">
+        <div class="skill"><div>HTML/CSS</div><div class="bar"><i style="width:95%"></i></div></div>
+        <div class="skill"><div>JavaScript</div><div class="bar"><i style="width:82%"></i></div></div>
+        <div class="skill"><div>Node.js</div><div class="bar"><i style="width:68%"></i></div></div>
+        <div class="skill"><div>Databases</div><div class="bar"><i style="width:72%"></i></div></div>
+      </div>
+
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <button class="action-btn primary" id="openPortfolio">Open Portfolio</button>
+        <button class="action-btn outline" id="downloadPdf">Download PDF</button>
+      </div>
+
+      <div style="margin-top:14px;color:var(--muted);font-size:13px">
+        <div><strong>Availability:</strong> Open to internships & part-time work</div>
+        <div style="margin-top:8px"><strong>Languages:</strong> English, Filipino</div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.nav-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      const t = document.querySelector(b.dataset.target);
+      if(t){ t.scrollIntoView({behavior:'smooth',block:'start'}); }
+      b.style.transform='translateY(-6px)';
+      setTimeout(()=>b.style.transform='none',160);
+    });
+  });
+
+  document.getElementById('openPortfolio').addEventListener('click', ()=>{
+    window.open('resume.html');
+  });
+
+  document.getElementById('downloadPdf').addEventListener('click', ()=>{
+    window.print();
+  });
+
+  window.addEventListener('load', ()=>{
+    document.querySelectorAll('.bar > i').forEach((el, i)=>{
+      setTimeout(()=> el.style.width = el.style.width, 100 + i*120);
+    });
+  });
+</script>
+
+</body>
+</html>

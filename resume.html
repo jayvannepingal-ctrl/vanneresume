@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Application Letter — IT Student</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#7c3aed;--muted:#9aa4b2;--glass: rgba(255,255,255,0.03)}
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; margin:0; background:linear-gradient(180deg,#071023 0%, #081428 100%); color:#e6eef6; padding:32px;}
+    .container{max-width:900px;margin:0 auto}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:14px; padding:28px; box-shadow:0 6px 30px rgba(2,6,23,0.7);}
+    header{display:flex; justify-content:space-between; align-items:center; gap:16px}
+    .name{font-size:20px; font-weight:700}
+    .role{font-size:13px; color:var(--muted)}
+    .contact{font-size:13px; color:var(--muted); text-align:right}
+    main{margin-top:18px}
+    .letter{background:var(--glass); padding:20px; border-radius:10px; color:#dbeafe}
+    p{line-height:1.55; margin:0 0 12px}
+    .signature{margin-top:18px}
+    .meta{margin-top:18px; display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-block; text-decoration:none; padding:10px 14px; border-radius:8px; font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#4f46e5); color:white}
+    .btn-outline{border:1px solid rgba(255,255,255,0.06); color:var(--muted); background:transparent}
+    footer{margin-top:18px; font-size:13px; color:var(--muted)}
+    @media (max-width:640px){header{flex-direction:column; align-items:flex-start} .contact{text-align:left}}
+
+    /* Global floating motion */
+    @keyframes drift {
+      0% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-6px) translateX(3px); }
+      100% { transform: translateY(0px) translateX(0px); }
+    }
+    /* Card slow breathing */
+    @keyframes breathe {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.015); }
+      100% { transform: scale(1); }
+    }
+    /* Text fade-rise */
+    @keyframes floattext {
+      0% { opacity: 0; transform: translateY(12px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    body { animation: drift 9s ease-in-out infinite; }
+    .card { animation: breathe 8s ease-in-out infinite; }
+    .letter p, .meta, footer, header { animation: floattext 0.9s ease forwards; }
+
+    /* make each meta column float slightly with different delays */
+    .meta > div { animation: drift 6s ease-in-out infinite; }
+    .meta > div:nth-child(1){animation-delay:0.1s}
+    .meta > div:nth-child(2){animation-delay:0.6s}
+    .meta > div:nth-child(3){animation-delay:1.1s}
+
+    /* button hover */
+    .btn{transition:transform .18s ease, box-shadow .18s ease}
+    .btn:hover{transform:translateY(-6px); box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <header>
+        <div>
+          <div class="name">Jay Vanne C. Pingal</div>
+          <div class="role">IT Student — Current / Recent Graduate</div>
+        </div>
+        <div class="contact">
+          <div>Email: <a href="jayvanne.pingal@neu.edu.ph" style="color:inherit;text-decoration:underline">jayvanne.pingal@neu.edu.ph</a></div>
+          <div>Phone: <a href="+63 916 563 0614" style="color:inherit;text-decoration:underline">+63 916 563 0614</a></div>
+          <div>Location: Quezon City, Philippines
+</div>
+        </div>
+      </header>
+
+      <main>
+        <section class="letter">
+          <p><strong>Date:</strong> <span id="date">[MM DD, YYYY]</span></p>
+
+          <p>Hiring Manager<br>
+          Accenture<br>
+
+          <p>Dear Hiring Manager,</p>
+
+          <p>My name is <strong>Jay Vanne C. Pingal</strong>. I am currently studying Information Technology at <em>New Era University</em> and I am writing to express my interest in the <strong>[Position You Are Applying For]</strong> role at your company. Through coursework and personal projects, I have gained hands-on experience in web development, basic system administration, and troubleshooting. I am comfortable with <em>HTML, CSS, JavaScript, Node.js / PHP</em>, and relational databases such as <em>MySQL / PostgreSQL</em>.</p>
+
+          <p>I work well in teams, communicate clearly, and learn quickly. I enjoy solving technical problems and delivering clean, maintainable solutions. The projects listed in my portfolio demonstrate practical examples of my skills and my dedication to continuous improvement.</p>
+
+          <p>Please find my full web resume and portfolio here:</p>
+
+          <p style="margin-top:8px">
+            <a class="btn btn-primary" href="web_resume.html" target="_blank" rel="noopener" id="portfolioLink">Open Web Resume</a>
+            
+          </p>
+
+          <p class="signature">Thank you for taking the time to review my application. I would welcome the opportunity to discuss how my skills can contribute to your team. I look forward to the possibility of an interview.</p>
+
+          <p class="signature"><strong>Sincerely,</strong><br>
+          <strong>Jay Vanne C. Pingal</strong><br>
+          <a href="jayvanne.pingal@neu.edu.ph" style="color:inherit;text-decoration:underline">jayvanne.pingal@neu.edu.ph</a> +63 916 563 0614</p>
+        </section>
+
+        <div class="meta">
+          <div style="flex:1;min-width:200px">
+            <h4 style="margin:6px 0 8px">Short Profile</h4>
+            <p style="color:var(--muted);margin:0">IT student with practical experience in web development, databases, and basic networking. Passionate about clean code and user-friendly interfaces.</p>
+          </div>
+
+          <div style="flex:1;min-width:200px">
+            <h4 style="margin:6px 0 8px">Skills</h4>
+            <p style="color:var(--muted);margin:0">HTML, CSS, JavaScript, Node.js / PHP, MySQL / PostgreSQL, Git, Linux basics, Debugging, REST APIs</p>
+          </div>
+
+          <div style="flex:1;min-width:200px">
+            <h4 style="margin:6px 0 8px">Projects</h4>
+            <p style="color:var(--muted);margin:0">Attendance System (Web), Portfolio Site, Small e-commerce demo, Task scheduler</p>
+          </div>
+        </div>
+
+        <footer>
+          <p>Tip: Replace <code>[Your Name]</code>, email, phone, and the web resume link above before saving or printing. To preview: save this file as <code>application_letter.html</code> and open it in a web browser.</p>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // quick interactive press animation
+    const btns = document.querySelectorAll('.btn');
+    btns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // small ripple effect
+        btn.style.transform = 'scale(0.94)';
+        setTimeout(() => { btn.style.transform = 'scale(1)'; }, 150);
+      });
+    });
+
+    // fill date automatically
+    const d = new Date();
+    document.getElementById('date').textContent = d.toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
+  </script>
+</body>
+</html>
